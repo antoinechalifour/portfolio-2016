@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-2016",
+  "version": "0.0.0",
+  "authors": [
+    "antoinechalifour <antoine.chalifour@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton": "~2.0.4",
+    "font-awesome": "~4.4.0",
+    "three.js": "threejs#*"
+  }
+}
