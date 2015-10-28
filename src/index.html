@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
   <title>Antoine Chalifour</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -10,13 +11,40 @@
   <div class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title">Hej! I'm Antoine</h1>
-      <span class="hero-subtitle">I <i class="fa fa-heart"></i> to experiment things</span>
+      <span class="hero-subtitle">I <i class="fa fa-heart"></i> to experiment things.</span>
     </div>
   </div>
 
-  <div class="skill-container" id="skill-container"></div>
+  <div class="introduction-container">
+    <div class="container">
+      <h1 class="title">Nice to meet you.</h1>
+      <p class="introduction-content paragraph">
+        My name is Antoine Chalifour and I'm a student based in Växjö, Sweden. I spend a lot of time studying <span class="accent">Sofware Development</span>, <span class="accent">Machine Learning</span> & <span class="accent">Data Mining</span>. 
+      </p>
+      <p class="introduction-content paragraph">
+        If I'm not studying, I like to create things for the Web using cutting-edge technologies, especially all the Javascript ecosystem. 
+      </p>
+    </div>
+  </div>
+
+  <div class="skill-container">
+    <div class="container">
+      <h1 class="title">My Skills</h1>
+      <div id="skill-container"></div>
+    </div>
+  </div>
+
+  <div class="projects-container">
+    <div class="container">
+      <h1 class="title">Projects</h1>
+      <p class="projects-content paragraph">
+        Here are a few projects that I've crafted over the past years. Should you have any questions, do not hesitate to send me your sweetest message!
+      </p>
+    </div>
+  </div>
 
   <script src="bower_components/three.js/build/three.min.js"></script>
+  <script src="bower_components/three.js/examples/js/Detector.js"></script>
   <script src="bower_components/three.js/examples/js/controls/TrackballControls.js"></script>
   <script src="all.js"></script>
 </body>

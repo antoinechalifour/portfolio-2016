@@ -1,3 +1,4 @@
+import THREE from 'three';
 import {nearestPow2} from './utils';
 
 var SPHERE_COLOR = 0x6D6D6D;
@@ -112,6 +113,10 @@ export default class {
     this.scene.add(sphere);
   }
 
+  /**
+   * TODO optimize. e.g. implement Quick Hull...
+   * @return {undefined}
+   */
   generateTriangles() {
     var skills = this.skills;
     skills.forEach(s1 => {
@@ -164,7 +169,7 @@ export default class {
     var height = this.el.offsetHeight;
     var min = (width > height) ? height : width;
     var radius = min * 0.01;
-    this.camera.position.z = radius * 2;
+    this.camera.position.z = radius * 1.9;
 
     this.renderer.setSize(width, height);
     this.el.appendChild(this.renderer.domElement);
@@ -180,7 +185,6 @@ export default class {
   }
 
   render(e) {
-    console.log('isRendering');
     this.renderer.render(this.scene, this.camera);
   }
 };

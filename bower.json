@@ -18,7 +18,6 @@
     "tests"
   ],
   "dependencies": {
-    "skeleton": "~2.0.4",
     "font-awesome": "~4.4.0",
     "three.js": "threejs#*"
   }
