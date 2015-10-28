@@ -1,4 +1,11 @@
 @import '_dimens.less';
+@import '_palette.less';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
 
 .section {
   padding-top: @section-pt;
@@ -7,8 +14,18 @@
 
   .title {
     margin-top: 0;
+    margin-bottom: 0;
     text-transform: uppercase;
     font-size: 2rem;
+  }
+
+  .divider {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    color: @primary-light;
+    background-color: @primary-light;
   }
 
   .paragraph {

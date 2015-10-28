@@ -1,5 +1,5 @@
 // Array of skills to be displayed in the sphere.
-const skills = [{
+export default [{
   name: 'Node.js',
   value: 95
 }, {
@@ -30,5 +30,3 @@ const skills = [{
   name: 'Javascript',
   value: 95
 }];
-
-export default skills;

@@ -3,9 +3,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" >
   <title>Antoine Chalifour</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/fluidable/fluidable-min.css">
   <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,200" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,200">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="hero-container">
@@ -17,12 +18,13 @@
 
   <div class="introduction-container">
     <div class="container">
-      <h1 class="title">Nice to meet you.</h1>
+      <h1 class="title">Nice to meet you</h1>
+      <hr class="divider">
       <p class="introduction-content paragraph">
-        My name is Antoine Chalifour and I'm a student based in Växjö, Sweden. I spend a lot of time studying <span class="accent">Sofware Development</span>, <span class="accent">Machine Learning</span> & <span class="accent">Data Mining</span>. 
+        My name is Antoine Chalifour and I'm a French student based in Växjö, Sweden. I spend a lot of time studying <span class="accent">Sofware Development</span>, <span class="accent">Machine Learning</span> & <span class="accent">Data Mining</span>. 
       </p>
       <p class="introduction-content paragraph">
-        If I'm not studying, I like to create things for the Web using cutting-edge technologies, especially all the Javascript ecosystem. 
+        If I'm not studying, I like to create things for the Web using cutting-edge technologies, especially all the <span class="accent">Javascript</span> ecosystem. 
       </p>
     </div>
   </div>
@@ -30,6 +32,7 @@
   <div class="skill-container">
     <div class="container">
       <h1 class="title">My Skills</h1>
+      <hr class="divider">
       <div id="skill-container"></div>
     </div>
   </div>
@@ -37,13 +40,47 @@
   <div class="projects-container">
     <div class="container">
       <h1 class="title">Projects</h1>
+      <hr class="divider">
       <p class="projects-content paragraph">
         Here are a few projects that I've crafted over the past years. Should you have any questions, do not hesitate to send me your sweetest message!
       </p>
+      <hr class="divider">
+      <div id="projects-row" class="projects-list col-group"></div>
     </div>
   </div>
 
-  <script src="bower_components/three.js/build/three.min.js"></script>
+  <div class="contact-container">
+    <div class="container">
+      <h1 class="title">Write me anything</h1>
+      <p class="paragraph">Should you have any question, please send me a <span class="accent">message</span>.</p>
+
+      <div class="form-container">
+        <div class="col-group">
+          <div class="col-mb-12">
+            <input type="email" id="contact-email" class="form-input" placeholder="Your email">
+          </div>
+          <div class="col-mb-12">
+            <input type="text" id="contact-name" class="form-input" placeholder="Your name">
+          </div>
+          <div class="col-mb-12">
+            <textarea name="" id="contact-message" cols="30" rows="10" class="form-input" placeholder="Your message..."></textarea>
+          </div>
+          <div class="col-mb-12">
+            <button id="contact-submit" class="form-button">Let's go!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script id="template-project" type="x-tmpl-mustache">
+    <img src="{{src}}" class="preview"/>
+    <h1 class="project-title">{{name}}</h1>
+    <p class="project-description">{{description}}</p>
+  </script>
+
+  <script src="bower_components/mustache.js/mustache.js"></script>
+  <script src="bower_components/three.js/build/three.js"></script>
   <script src="bower_components/three.js/examples/js/Detector.js"></script>
   <script src="bower_components/three.js/examples/js/controls/TrackballControls.js"></script>
   <script src="all.js"></script>

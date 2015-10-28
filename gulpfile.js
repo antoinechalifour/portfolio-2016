@@ -3,6 +3,9 @@ const less = require('gulp-less');
 const prefix = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
 
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+
 const browserify = require('browserify');
 const debowerify = require('debowerify');
 const shim = require('browserify-shim');
@@ -27,6 +30,16 @@ gulp.task('html', _ => {
     .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('assets', _ => {
+  return gulp.src('src/img/*')
+    .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+    }))
+    .pipe(gulp.dest('dist/img//'));
+});
+
 gulp.task('js', _ => {
   return browserify({
     entries: 'src/scripts/app.js',
@@ -46,4 +59,4 @@ gulp.task('watch', _ => {
   gulp.watch('src/**/*.js', ['js']);
 });
 
-gulp.task('dev', ['html', 'vendors', 'less', 'js', 'watch']);
+gulp.task('dev', ['html', 'assets', 'vendors', 'less', 'js', 'watch']);

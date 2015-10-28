@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "font-awesome": "~4.4.0",
-    "three.js": "threejs#*"
+    "three.js": "threejs#*",
+    "mustache.js": "mustache#~2.2.0",
+    "fluidable": "~1.2.5"
   }
 }

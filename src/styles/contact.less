@@ -1,0 +1,56 @@
+@import '_palette.less';
+
+.contact-container {
+  .section();
+  background-color: @primary-dark;
+  color: @primary-thin;
+
+  .form-container {
+    margin: auto;
+    max-width: 600px;
+    background-color: @primary;
+    padding: 20px;
+  }
+
+  .form-input {
+    color: @primary-thin;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    width: 95%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px @primary-light;
+
+    transition: border 0.3s;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-bottom: solid 1px @primary-thin;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+  }
+
+  .form-button {
+    background-color: transparent;
+    color: @primary-thin;
+    border: solid 1px @primary-thin;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    transition: all .6s;
+    cursor: pointer;
+
+    &:hover {
+      color: @primary-dark;
+      background-color: @primary-light;
+      border: solid 1px @primary-light;
+    }
+  }
+}

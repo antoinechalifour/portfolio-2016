@@ -1,18 +1,17 @@
 import THREE from 'three';
 import Detector from 'Detector';
 import SkillVisualizer from './SkillVisualizer';
-import skills from './skills';
 
 export default class {
-  constructor() {
+  constructor(params) {
     if(!Detector.webgl) throw new Error('WebGL is not supported');
-    this.el = document.getElementById('skill-container');
+    ({ skills: this.skills, el: this.el } = params);
     var width = this.el.offsetWidth;
     var height = this.el.offsetHeight;
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, width/height, 0.1, 50);
     this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-    this.visualizer = new SkillVisualizer(skills, this.el, this.scene, this.camera, this.renderer);
+    this.visualizer = new SkillVisualizer(this.skills, this.el, this.scene, this.camera, this.renderer);
     this.controls = new THREE.TrackballControls(this.camera, this.el);
   }
 
