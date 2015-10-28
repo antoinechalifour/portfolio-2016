@@ -63,22 +63,21 @@ export default class {
   }
 
   generateLabels(radius) {
-    let textHeight = 12;
-    let actualFontSize = 0.90;
+    let textHeight = 32;
+    let actualFontSize = 0.5;
 
     this.skills.forEach(skill => {
       let canvas = document.createElement('canvas');
       let ctx = canvas.getContext('2d');
-      ctx.font = `normal 200 ${textHeight}px sans-serif`;
-      ctx.save();
+      ctx.font = `bold ${textHeight}px arial`;
       let textWidth = ctx.measureText(skill.name).width;
-      canvas.height = nearestPow2(textHeight);
-      canvas.width = nearestPow2(textWidth);
-      ctx.restore();
-      ctx.fillStyle = 'black';
+      var height = canvas.height = nearestPow2(textHeight);
+      var width = canvas.width = nearestPow2(textWidth);
+      ctx.font = `bold ${textHeight}px arial`;
+      ctx.fillStyle = '#111111';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(skill.name, textWidth / 2, textHeight / 2);
+      ctx.fillText(skill.name, width / 2, height / 2);
 
       let texture = new THREE.Texture(canvas);
       texture.needsUpdate = true;
@@ -89,7 +88,8 @@ export default class {
 
       let mesh = new THREE.Sprite(material);
       let axe = skill.axe;
-      mesh.position.set(axe.x * 1.06, axe.y * 1.06, axe.z * 1.06);
+      mesh.position.set(axe.x * 1.1, axe.y * 1.1, axe.z * 1.1);
+      // mesh.scale.set(textWidth / textHeight * actualFontSize, actualFontSize, 1);
       mesh.scale.set(textWidth / textHeight * actualFontSize, actualFontSize, 1);
 
       this.scene.add(mesh);
@@ -163,14 +163,14 @@ export default class {
     var width = this.el.offsetWidth;
     var height = this.el.offsetHeight;
     var min = (width > height) ? height : width;
-    var radius = min * 0.02;
-    this.camera.position.z = radius * 1.8;
+    var radius = min * 0.01;
+    this.camera.position.z = radius * 2;
 
     this.renderer.setSize(width, height);
     this.el.appendChild(this.renderer.domElement);
     this.computeSkillsPoints(radius);
     this.generateSphere(radius, SPHERE_OPACITY);
-    this.generateSphere(radius * 0.75, SPHERE_OPACITY * 0.4);
+    //this.generateSphere(radius * 0.75, SPHERE_OPACITY * 0.4);
     this.generateAxis();
     this.generateLabels(radius);
     this.generateTriangles();
@@ -180,6 +180,7 @@ export default class {
   }
 
   render(e) {
+    console.log('isRendering');
     this.renderer.render(this.scene, this.camera);
   }
 };

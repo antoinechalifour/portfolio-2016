@@ -1,24 +1,24 @@
 // Array of skills to be displayed in the sphere.
 const skills = [{
-  name: 'PHP',
-  value: 55
-}, {
   name: 'Node.js',
   value: 95
 }, {
-  name :'Java',
-  value: 75
+  name: 'PHP',
+  value: 55
 }, {
-  name: 'MySQL',
-  value: 60
+  name :'Java',
+  value: 85
 }, {
   name: 'MongoDB',
   value: 45
 }, {
+  name: 'MySQL',
+  value: 60
+}, {
   name: 'Machine Learning',
   value: 60
 }, {
-  name: 'IA',
+  name: 'AI',
   value: 45
 }, {
   name: 'AngularJS',
