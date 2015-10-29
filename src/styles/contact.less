@@ -10,6 +10,7 @@
     max-width: 600px;
     background-color: @primary;
     padding: 20px;
+    border-radius: 5px;
   }
 
   .form-input {
@@ -23,12 +24,14 @@
     background-color: transparent;
     border: none;
     border-bottom: solid 1px @primary-light;
+    color: @primary-light;
 
-    transition: border 0.3s;
+    transition: all 0.3s;
     resize: none;
 
     &:focus {
       outline: none;
+      color: @primary-thin;
       border-bottom: solid 1px @primary-thin;
     }
   }
@@ -46,6 +49,7 @@
     text-transform: uppercase;
     transition: all .6s;
     cursor: pointer;
+    outline: none;
 
     &:hover {
       color: @primary-dark;
