@@ -1,32 +1,31 @@
-// Array of skills to be displayed in the sphere.
 export default [{
-  name: 'Node.js',
+  name: 'HTML5',
+  value: 90
+}, {
+  name: 'Javascript',
   value: 95
+}, {
+  name: 'CSS3',
+  value: 80
+}, {
+  name: 'Node.js',
+  value: 90
 }, {
   name: 'PHP',
   value: 55
 }, {
-  name :'Java',
-  value: 85
-}, {
-  name: 'MongoDB',
-  value: 45
-}, {
-  name: 'MySQL',
-  value: 60
+  name :'POO',
+  value: 90
 }, {
   name: 'Machine Learning',
   value: 60
 }, {
   name: 'AI',
-  value: 45
+  value: 40
 }, {
   name: 'AngularJS',
-  value: 90
+  value: 85
 },  {
   name: 'Android',
   value: 65
-}, {
-  name: 'Javascript',
-  value: 95
 }];

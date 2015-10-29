@@ -2,10 +2,14 @@
 
 .hero-container {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: @primary-dark;
   color: @primary-thin;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+
+  @media (min-width: 600px) {
+    min-height: 90vh;
+  }
 
   .hero-content {
     position: absolute;
@@ -18,14 +22,22 @@
     .hero-title {
       text-transform: uppercase;
       font-family: 'Raleway', sans-serif;
-      font-size: 4rem;
+      font-size: 3rem;
       letter-spacing: .3rem;
       margin-bottom: 10px;
       font-weight: 200;
+
+      @media (min-width: 600px) {
+        font-size: 4rem;
+      }
     }
 
     .hero-subtitle {
-      font-size: 2rem;
+      font-size: 1.5rem;
+
+      @media (min-width: 600px) {
+        font-size: 2rem;
+      }
     }
 
     i {

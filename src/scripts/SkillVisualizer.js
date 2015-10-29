@@ -13,7 +13,9 @@ var DIRECTIONAL_LIGHT_COLOR2 = 0xFFFFFF;
 export default class {
   constructor(skills, el, scene, camera, renderer) {
     this.isRendering = false;
-    this.skills = skills;
+    this.skills = skills.sort((a, b) => {
+      return a.value < b.value;
+    });
     this.el = el;
     this.scene = scene;
     this.camera = camera;
@@ -21,7 +23,6 @@ export default class {
   }
 
   computeSkillsPoints (radius) {
-    // Here we use fibonnaci's spiral to compute their position on the sphere
     const fi = (Math.sqrt(5) + 1) / 2 - 1;
     const k = fi * Math.PI;
 

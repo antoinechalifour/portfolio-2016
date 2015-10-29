@@ -23,7 +23,6 @@ window.onload = function(){
   }).render();
 
   var skillEl = document.getElementById('skill-container');
-  window.skillEl = skillEl;
   if(Detector.webgl && width > 800) {
     skillEl.className += ' skill-webgl';
     var skillControllerWebGL = new SkillControllerWebGL({
@@ -39,7 +38,5 @@ window.onload = function(){
       el: skillEl
     });
     skillControllerMobile.init();
-    window.test = skillControllerMobile;
-    //skillControllerMobile.render(skillEl.offsetWidth);
   }
 };

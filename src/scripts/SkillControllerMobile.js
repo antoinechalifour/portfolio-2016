@@ -1,4 +1,4 @@
-var BAR_HEIGHT = 25;
+var BAR_HEIGHT = 20;
 var BAR_MARGIN = 5;
 var BAR_COLOR = '#943232';
 var FIXED_MARGIN = 20;
@@ -10,8 +10,8 @@ export default class {
       el: this.el
     } = params);
 
-    this.velocity = 1;
-    this.acceleration = 1;
+    this.velocity = 0.2;
+    this.acceleration = 0.3;
     this.currentWidth = 1;
     this.canvas = document.createElement('canvas');
     this.ctx = this.canvas.getContext('2d');
@@ -24,7 +24,7 @@ export default class {
     this.el.appendChild(this.canvas);
     this.ctx.textAlign = 'right';
     this.ctx.textBaseline = 'middle';
-    this.ctx.font = `${BAR_HEIGHT/2}px "Raleway"`;
+    this.ctx.font = `${BAR_HEIGHT/1.7}px "Raleway"`;
 
     this.skills.sort((a, b) => {
       return a.value < b.value;
@@ -48,14 +48,19 @@ export default class {
       this.render(this.el.offsetWidth);
     });
 
-    window.addEventListener('scroll', () => {
+    function scrollHandler() {
       let scrolled = window.pageYOffset;
       let elTop = this.el.getBoundingClientRect().top;
       if(scrolled >= elTop) {
         this.render(this.el.offsetWidth);
-
       }
-    });
+
+      return this;
+    }
+
+    scrollHandler.bind(this)();
+
+    window.addEventListener('scroll', scrollHandler.bind(this));
   }
 
   render(width){
