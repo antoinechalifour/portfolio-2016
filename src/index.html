@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
+   <!-- SEO -->
+  <meta name="author" content="Antoine Chalifour">
+  <meta name="description" content="Antoine Chalifour, Computer Science student, Web enthousiast">
+  <meta name="keywords" content="antoine, chalifour, web, developer, application, javascript, portfolio, hire, me">
+
+
+  <!-- Social: Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Antoine_Chlfr">
+  <meta name="twitter:creator" content="@Antoine_Chlfr">
+  <meta name="twitter:title" content="Antoine Chalifour, Computer Science student, Web enthousiast">
+  <meta name="twitter:description" content="Hey guys, check out my portfolio!">
+  <meta name="twitter:image:src" content="http://www.antoinechalifour.fr/img/site-intro.png">
+
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="http://www.antoinechalifour.fr">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Antoine Chalifour, Computer Science student, Web enthousiast">
+  <meta property="og:image" content="http://www.antoinechalifour.fr/img/site-intro.png">
+  <meta property="og:description" content="Hey guys, check out my portfolio!">
+  <meta property="og:site_name" content="Antoine Chalifour">
+  <meta property="article:author" content="https://www.facebook.com/antoine.chalifour">
+  <meta property="article:publisher" content="https://www.facebook.com/antoine.chalifour">
+
+  <meta itemprop="name" content="Antoine Chalifour, Computer Science student, Web enthousiast">
+  <meta itemprop="description" content="Hey guys, check out my portfolio!">
+  <meta itemprop="image" content="http://www.antoinechalifour.fr/img/site-intro.png">
+
   <title>Antoine Chalifour</title>
-  <link rel="stylesheet" type="text/css" href="bower_components/fluidable/fluidable-min.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,200">
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather:300'>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+
+  <!-- build:css app.css-->
+  <link rel="stylesheet" type="text/css" href="bower_components/fluidable/fluidable-min.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- endbuild -->
 </head>
 <body>
   <div class="hero-container">
@@ -81,10 +113,12 @@
     <p class="project-description">{{description}}</p>
   </script>
 
+  <!-- build:js app.js-->
   <script src="bower_components/mustache.js/mustache.js"></script>
   <script src="bower_components/three.js/build/three.js"></script>
   <script src="bower_components/three.js/examples/js/Detector.js"></script>
   <script src="bower_components/three.js/examples/js/controls/TrackballControls.js"></script>
   <script src="all.js"></script>
+  <!-- endbuild -->
 </body>
 </html>

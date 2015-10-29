@@ -12,6 +12,12 @@ const shim = require('browserify-shim');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 
+const usemin = require('gulp-usemin');
+const uglify = require('gulp-uglify');
+const minifyHtml = require('gulp-minify-html');
+const minifyCss = require('gulp-minify-css');
+const rev = require('gulp-rev');
+
 gulp.task('vendors', _ => {
   return gulp.src('src/bower_components/**/*.*')
     .pipe(gulp.dest('dist/bower_components/'));
@@ -37,7 +43,7 @@ gulp.task('assets', _ => {
         svgoPlugins: [{removeViewBox: false}],
         use: [pngquant()]
     }))
-    .pipe(gulp.dest('dist/img//'));
+    .pipe(gulp.dest('dist/img/'));
 });
 
 gulp.task('js', _ => {
@@ -59,4 +65,25 @@ gulp.task('watch', _ => {
   gulp.watch('src/**/*.js', ['js']);
 });
 
+gulp.task('usemin', function() {
+  return gulp.src('dist/index.html')
+    .pipe(usemin({
+      css: [ rev() ],
+      html: [ minifyHtml({ empty: true }) ],
+      js: [ uglify(), rev() ],
+      inlinejs: [ uglify() ],
+      inlinecss: [ minifyCss(), 'concat' ]
+    }))
+    .pipe(gulp.dest('build/'));
+});
+
+gulp.task('assets:build', _ => {
+  gulp.src('dist/img/*')
+    .pipe(gulp.dest('build/img/'));
+
+  gulp.src('dist/bower_components/font-awesome/fonts/*')
+    .pipe(gulp.dest('build/fonts/'));
+});
+
 gulp.task('dev', ['html', 'assets', 'vendors', 'less', 'js', 'watch']);
+gulp.task('build', ['html', 'assets', 'vendors', 'less', 'js', 'usemin', 'assets:build']);
