@@ -17,7 +17,7 @@ export default class {
     this.ctx = this.canvas.getContext('2d');
   }
 
-  init() {
+  computeDimenstions(){
     var height = this.skills.length * (BAR_HEIGHT + BAR_MARGIN) + FIXED_MARGIN * 2 - BAR_MARGIN;
     this.canvas.width = this.el.offsetWidth;
     this.canvas.height = height;
@@ -25,7 +25,9 @@ export default class {
     this.ctx.textAlign = 'right';
     this.ctx.textBaseline = 'middle';
     this.ctx.font = `${BAR_HEIGHT/1.7}px "Raleway"`;
+  }
 
+  init() {
     this.skills.sort((a, b) => {
       return a.value < b.value;
     });
@@ -45,6 +47,7 @@ export default class {
     this.offset = maxLabelWidth + BAR_HEIGHT;
 
     window.addEventListener('resize', () => {
+      this.computeDimenstions();
       this.render(this.el.offsetWidth);
     });
 

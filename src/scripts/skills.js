@@ -14,7 +14,7 @@ export default [{
   name: 'PHP',
   value: 55
 }, {
-  name :'POO',
+  name :'OOP',
   value: 90
 }, {
   name: 'Machine Learning',

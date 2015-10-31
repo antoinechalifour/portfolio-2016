@@ -2,15 +2,15 @@
 
 .contact-container {
   .section();
-  background-color: @primary-dark;
-  color: @primary-thin;
+  background-color: #fff;
 
   .form-container {
     margin: auto;
-    max-width: 600px;
-    width: 80%;
-    background-color: @primary;
     padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fafafa;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
     border-radius: 5px;
     
     .col-group {
@@ -58,9 +58,13 @@
     outline: none;
 
     &:hover {
-      color: @primary-dark;
-      background-color: @primary-light;
-      border: solid 1px @primary-light;
+      color: @primary;
+      background-color: @primary-thin;
+      border: solid 1px @primary-thin;
+    }
+
+    &[disabled=true] {
+      color: @primary-light;
     }
   }
 }

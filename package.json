@@ -29,6 +29,7 @@
   "browserify-shim": {
     "three": "global:THREE",
     "Detector": "global:Detector",
-    "Mustache": "global:Mustache"
+    "Mustache": "global:Mustache",
+    "google": "global:google"
   }
 }

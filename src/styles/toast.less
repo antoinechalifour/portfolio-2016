@@ -1,0 +1,28 @@
+@import '_palette.less';
+@import '_general.less';
+
+@toastMargin: 2rem;
+
+#toast {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  bottom: @toastMargin;
+  right: 0;
+  max-width: 95%;
+  padding: 16px;
+  margin: 16px;
+  background-color: @primary-dark;
+  color: @primary-thin;
+  .BoxShadowHelper(2);
+
+  text-align: center;
+
+  .sent {
+    color: #32944E;
+  }
+
+  .error {
+    color: @accent;
+  }
+}

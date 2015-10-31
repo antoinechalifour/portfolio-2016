@@ -1,0 +1,62 @@
+@import '_palette.less';
+
+@mapsheight: 50vh;
+@footerheight: 30vh;
+
+.footer-container {
+  text-align: center;
+  background-color: @primary-dark;
+  color: @primary-thin;
+
+  .map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: @mapsheight;
+    .BoxShadowHelper(1);
+  }
+  
+  .footer-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: @footerheight;
+  }
+
+  .footer-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  i {
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color .5s;
+    color: @primary-thin;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.last {
+  min-height: @mapsheight + @footerheight;
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  h1 {
+    margin-top: 0;
+  }
+}
