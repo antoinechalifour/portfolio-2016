@@ -2,6 +2,8 @@ import Detector from 'Detector';
 import google from 'google';
 import skills from './skills';
 import projects from './projects';
+import sentences from './sentences';
+import HeroController from './HeroController';
 import SkillControllerMobile from './SkillControllerMobile';
 import SkillControllerWebGL from './SkillControllerWebGL';
 import ProjectsController from './ProjectsController';
@@ -12,6 +14,12 @@ var MAP_API = 'AIzaSyCEOiwDmfpzi7f7H_rIEj7Ilc29QXsr9AM';
 
 window.onload = function(){
   let width = window.innerWidth;
+
+  new HeroController({
+    sentences,
+    writer: document.getElementById('hero-writer'),
+    cursor: document.getElementById('hero-cursor')
+  });
 
   new ContactController({
     email: document.getElementById('contact-email'),
