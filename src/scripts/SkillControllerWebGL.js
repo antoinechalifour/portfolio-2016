@@ -15,6 +15,7 @@ export default class {
 
   init() {
     this.controls.noZoom = true;
+    this.controls.noPan = true;
     this.controls.rotateSpeed = 3;
     this.visualizer.init();
     this.controls.addEventListener('change', this.visualizer.render.bind(this.visualizer));
