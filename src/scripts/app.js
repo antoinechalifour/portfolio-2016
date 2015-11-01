@@ -74,7 +74,12 @@ window.onload = function(){
 
       let marker = new google.maps.Marker({
         position: latLng,
-        map: map
+        map: map,
+        url: 'https://goo.gl/photos/a4VppzWdvHkxx584A'
+      });
+
+      google.maps.event.addListener(marker, 'click', () => {
+        window.open(marker.url, '_blank');
       });
     }
   });
