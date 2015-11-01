@@ -7,7 +7,6 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
 const browserify = require('browserify');
-const debowerify = require('debowerify');
 const shim = require('browserify-shim');
 const babelify = require('babelify');
 const eslint = require('gulp-eslint');
@@ -53,7 +52,6 @@ gulp.task('js', _ => {
     debug: true
   })
   .transform(babelify)
-  //.transform(debowerify)
   .transform(shim)
   .bundle()
   .pipe(source('all.js'))
