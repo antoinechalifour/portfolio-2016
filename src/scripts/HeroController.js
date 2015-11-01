@@ -38,7 +38,7 @@ export default class {
       setTimeout(this.erase.bind(this), 75);
     } else {
       this.pickSentence();
-      this.type();
+      setTimeout(this.type.bind(this), 500);
     }
   }
 
