@@ -5,5 +5,5 @@ export default [
   'to create things',
   'black coffee',
   'watching Netflix',
-  'you'
+  'you',
 ];

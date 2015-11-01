@@ -10,6 +10,7 @@ const browserify = require('browserify');
 const debowerify = require('debowerify');
 const shim = require('browserify-shim');
 const babelify = require('babelify');
+const eslint = require('gulp-eslint');
 const source = require('vinyl-source-stream');
 
 const usemin = require('gulp-usemin');
@@ -57,6 +58,13 @@ gulp.task('js', _ => {
   .bundle()
   .pipe(source('all.js'))
   .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('lint', _ => {
+  return gulp.src('src/scripts/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('watch', _ => {
